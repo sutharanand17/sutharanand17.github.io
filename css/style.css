@@ -6,15 +6,15 @@ Palette
     1a1c20
 */
 * {
-    background-color: #f4f4f4;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #f4f4f4;
     color: #1a1c20;
     font-size: 16px;
     font-family: Montserrat, sans-serif;
     line-height: 2rem;
-}
-
-body {
     margin: 0;
 }
 
@@ -31,13 +31,29 @@ body {
     padding: 5px;
 }
 
+.centered.row {
+    justify-content: center;
+}
+
 .column {
     border-top: 1px solid rgba(0, 0, 0, 0.2);
     padding: 5px;
+    margin: 10px auto;
 }
 
 .column:first-child {
     border-top: none;
+    margin: auto;
+}
+
+.container {
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+    margin: 10px auto;
+}
+
+.container:first-child {
+    border-top: none;
+    margin: auto;
 }
 
 .one-fifth {
@@ -109,6 +125,10 @@ input[type="button"]:hover,
     line-height: 4rem;
 }
 
+a {
+    color: #1a1c20;
+}
+
 .home {
     justify-content: center;
     min-height: 100vh;
@@ -125,6 +145,12 @@ input[type="button"]:hover,
 
     .column {
         border-top: none;
+        margin: auto;
+    }
+
+    .container {
+        border-top: none;
+        margin: auto;
     }
 
     .one-fifth {
@@ -146,4 +172,131 @@ input[type="button"]:hover,
     .tech .pills {
         justify-content: flex-end;
     }
+}
+
+/* Timeline */
+.path {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    position: relative;
+    margin: 10px;
+}
+
+.path::after {
+    content: '';
+    position: absolute;
+    width: 5px;
+    background-color: #f0a500;
+    top: 0;
+    bottom: 0;
+}
+
+.path .title {
+    background-color: #f0a500;
+    color: #1a1c20;
+    padding: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 50px;
+}
+
+.path .milestone {
+    background-color: inherit;
+    padding: 5px;
+    position: relative;
+    margin: 5px;
+}
+
+.path .milestone::after {
+    content: '';
+    position: absolute;
+    background-color: #f4f4f4;
+    border: 4px solid #1a1c20;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 1;
+    top: 20px;
+}
+
+.path .milestone::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    border: medium solid white;
+}
+
+.left.path {
+    padding-right: 10px;
+    text-align: right;
+}
+
+.left.path .title {
+    border-radius: 10px 0 0 10px;
+    margin-right: 10px;
+}
+
+/* Path on left, vertical ruler on right */
+.left.path::after {
+    right: 17px;
+    margin-left: -3px;
+}
+
+.left.path .milestone {
+    padding-right: 30px;
+}
+
+.left.path .milestone::after {
+    right: -10px;
+}
+
+.left.path .milestone::before {
+    right: 20px;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #cf7500;
+}
+
+.right.path {
+    padding-left: 10px;
+    text-align: left;
+}
+
+.right.path .title {
+    border-radius: 0 10px 10px 0;
+    margin-left: 10px;
+}
+
+/* Path on right, vertical ruler on left */
+.right.path::after {
+    left: 17px;
+    margin-right: -3px;
+}
+
+.right.path .milestone {
+    padding-left: 30px;
+}
+
+.right.path .milestone::after {
+    left: -10px;
+}
+
+.right.path .milestone::before {
+    left: 20px;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #cf7500 transparent transparent;
+}
+
+/* The actual content */
+.content {
+    padding: 5px 15px;
+    background-color: #cf7500;
+    color: #f4f4f4;
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
