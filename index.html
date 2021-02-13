@@ -75,12 +75,21 @@
         grid-row-gap: 1.5rem;
         width: 100%;
       }
+      dl dt {
+        margin-right: 1rem;
+      }
       p {
         margin-bottom: 0.75rem;
       }
       strong small {
         font-weight: normal;
         opacity: 0.5;
+      }
+      .badges img {
+        height: 150px;
+        object-fit: contain;
+        width: 100%;
+        padding: 1rem;
       }
       @media (max-width: 400px) {
         dl {
@@ -94,20 +103,88 @@
         dd {
           margin-bottom: 2.5em;
         }
+        dl dt {
+          margin-right: auto;
+        }
       }
     </style>
   </head>
   <body>
     <div class="main">
       <h1 class="centered" title="Name">Anand Suthar</h1>
-      <h2 class="centered" title="Role">Software Developer<br />Rajasthan, India</h2>
+      <h2 class="centered" title="Role">
+        Software Developer<br />Rajasthan, India
+      </h2>
       <ul title="Something about me">
         <li>enjoys beautiful <em>software architecture</em></li>
         <li>in love with <em>standardized code</em></li>
         <li>likes to play with <em>web technology</em></li>
-        <li>not afraid to experiment with the latest <em>cool ones</em></li>
+        <li>not afraid to experiment with the <em>latest cool ones</em></li>
       </ul>
       <dl>
+        <dt title="proficient in">🤓 proficient in</dt>
+        <dd>
+          <div>
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+              >JavaScript,
+            </a>
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"
+              >C#.Net,
+            </a>
+            <a target="_blank" href="https://reactjs.org/">React JS, </a>
+            <a target="_blank" href="https://en.wikipedia.org/wiki/SQL"
+              >SQL,
+            </a>
+            <a target="_blank" href="https://api.jquery.com/">jQuery, </a>
+            <a target="_blank" href="https://en.wikipedia.org/wiki/CSS"
+              >CSS,
+            </a>
+            <a
+              target="_blank"
+              href="https://developer.mozilla.org/en-US/docs/Web/HTML"
+              >HTML</a
+            >
+          </div>
+        </dd>
+        <dt title="familiar with">😌 familiar with</dt>
+        <dd>
+          <div>
+            <a target="_blank" href="https://www.djangoproject.com/"
+              >django,
+            </a>
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Visual_Basic_.NET"
+              >VB.Net,
+            </a>
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Python_(programming_language)"
+              >Python,
+            </a>
+            <a target="_blank" href="https://vuejs.org/">Vue JS, </a>
+            <a target="_blank" href="https://en.wikipedia.org/wiki/Git"
+              >Git,
+            </a>
+            <a
+              target="_blank"
+              href="https://en.wikipedia.org/wiki/Azure_DevOps_Server"
+              >TFS,
+            </a>
+            <a target="_blank" href="https://azure.microsoft.com/en-in/"
+              >Azure,
+            </a>
+            <a target="_blank" href="https://angular.io/">Angular, </a>
+            <a target="_blank" href="https://www.typescriptlang.org/"
+              >TypeScript,
+            </a>
+            <a target="_blank" href="https://knockoutjs.com/">KO.JS</a>
+          </div>
+        </dd>
         <dt title="email">📫 email</dt>
         <dd>
           <script type="text/javascript">
@@ -121,18 +198,45 @@
         <dt title="social">🦉 social</dt>
         <dd>
           <p>
-            <a href="https://github.com/sutharanand" title="github">github.com/sutharanand</a>
-          </p>
-          <p>
-            <a href="https://www.linkedin.com/in/sutharanand17/"
-              title="LinkedIn">linkedin.com/in/sutharanand17</a
+            <a href="https://github.com/sutharanand" title="github"
+              >github.com/sutharanand</a
             >
           </p>
           <p>
-            <a href=" https://sutharanand17.medium.com/"
-              title="Medium">sutharanand17.medium.com</a
+            <a
+              href="https://www.linkedin.com/in/sutharanand17/"
+              title="LinkedIn"
+              >linkedin.com/in/sutharanand17</a
             >
           </p>
+          <p>
+            <a href=" https://sutharanand17.medium.com/" title="Medium"
+              >sutharanand17.medium.com</a
+            >
+          </p>
+        </dd>
+        <dt title="badges">🏅 badges</dt>
+        <dd class="badges">
+          <a
+            href="https://www.qwiklabs.com/public_profiles/1dee711c-a137-44fe-b484-a309179e481e"
+            title="Deploy to Kubernetes in Google Cloud"
+          >
+            <img
+              src="https://cdn.qwiklabs.com/PQNx2ZWzsymDLNMYVZgXVTOixmLXKgXS4S7cB5aHesY%3D"
+              alt="Deploy to Kubernetes in Google Cloud"
+              srcset=""
+            />
+          </a>
+          <a
+            href="https://www.qwiklabs.com/public_profiles/1dee711c-a137-44fe-b484-a309179e481e"
+            title="Kubernetes in Google Cloud"
+          >
+            <img
+              src="https://cdn.qwiklabs.com/t0mAYb9dBpyuPWwHBFQSo2aYPkq3SwYA3%2FaR51UWM94%3D"
+              alt="Kubernetes in Google Cloud"
+              srcset=""
+            />
+          </a>
         </dd>
         <dt title="articles">📜 articles</dt>
         <dd>
