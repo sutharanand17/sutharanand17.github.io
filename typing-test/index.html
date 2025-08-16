@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Typing Speed Test</h1>
+        <div class="test-text" id="testText"></div>
+        <input id="input" type="text" autocomplete="off" placeholder="Start typing..." />
+        <div class="result" id="result"></div>
+        <button id="restart">Restart</button>
+    </div>
+    <script>
+        const texts = [
+            "Frontend development is fun!",
+            "JavaScript makes the web interactive.",
+            "Type fast and accurately to win!"
+        ];
+        let start, timer, currentText;
+        const testText = document.getElementById('testText');
+        const input = document.getElementById('input');
+        const result = document.getElementById('result');
+        const restart = document.getElementById('restart');
+        function startTest() {
+            currentText = texts[Math.floor(Math.random() * texts.length)];
+            testText.textContent = currentText;
+            input.value = '';
+            input.disabled = false;
+            result.textContent = '';
+            input.className = '';
+            start = null;
+            clearInterval(timer);
+        }
+        input.oninput = function () {
+            if (!start) start = Date.now();
+            const val = input.value;
+            if (currentText.startsWith(val)) {
+                input.className = '';
+            } else {
+                input.className = 'error';
+            }
+            if (val === currentText) {
+                const time = (Date.now() - start) / 1000;
+                const wpm = Math.round((currentText.split(' ').length / time) * 60);
+                result.textContent = `Done! Time: ${time.toFixed(2)}s | WPM: ${wpm}`;
+                input.disabled = true;
+            }
+        };
+        restart.onclick = startTest;
+        window.onload = startTest;
+    </script>
+</body>
+
+</html>

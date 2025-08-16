@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Palette Generator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Color Palette Generator</h1>
+        <div class="palette" id="palette"></div>
+        <button id="generate">Generate Palette</button>
+    </div>
+    <script>
+        function randomColor() {
+            return '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+        }
+        function generatePalette() {
+            const palette = document.getElementById('palette');
+            palette.innerHTML = '';
+            for (let i = 0; i < 5; i++) {
+                const color = randomColor();
+                const swatch = document.createElement('div');
+                swatch.className = 'swatch';
+                swatch.style.background = color;
+                swatch.title = color;
+                swatch.textContent = color;
+                swatch.onclick = () => {
+                    navigator.clipboard.writeText(color);
+                    swatch.classList.add('copied');
+                    setTimeout(() => swatch.classList.remove('copied'), 700);
+                };
+                palette.appendChild(swatch);
+            }
+        }
+        document.getElementById('generate').onclick = generatePalette;
+        window.onload = generatePalette;
+    </script>
+</body>
+
+</html>

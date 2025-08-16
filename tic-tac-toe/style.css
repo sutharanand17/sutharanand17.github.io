@@ -1,0 +1,72 @@
+body {
+    background: #f2e9e4;
+    font-family: 'Quicksand', Arial, sans-serif;
+    color: #22223b;
+    margin: 0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 3rem auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(34, 34, 59, 0.08);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    grid-template-rows: repeat(3, 60px);
+    gap: 0.5rem;
+    justify-content: center;
+    margin: 0 auto 1.5rem auto;
+}
+
+.cell {
+    background: #f2e9e4;
+    border-radius: 8px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4a4e69;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(34, 34, 59, 0.08);
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.cell:hover {
+    background: #9a8c98;
+    color: #fff;
+    transform: scale(1.08);
+}
+
+.status {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    min-height: 1.5em;
+}
+
+button {
+    background: #4a4e69;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #9a8c98;
+}
